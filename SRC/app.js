@@ -90,12 +90,35 @@ app.get("/users",(req,res,next)=>{
     //res.send({"message":"users get api"});
     next();
 })
+
+//we can also do this 
+// app.get("/users",adminAuth,(req,res,next)=>{
+//     console.log("users get api");
+//     //res.send({"message":"users get api"});
+//     next();
+// })
+
 app.get("/users/getdata",(req,res,next)=>{
     console.log("users post api");
     res.send({"message":"users post api"});
     //next();
 })
 
+
+//error handling
+app.get("/getuserdata",(res,req)=>{
+    try{
+        res.status(200).send({"message":"get data successfully"});
+    }
+    catch(err){
+        res.status(500).send({"message":"Sorry something went wrong"});
+    }
+})
+app.use("/",(err,req,res,next)=>{
+    if(err){
+        res.status(500).send({"message":"Sorry something went wrong"})
+    }
+})
 
 app.listen(3000,()=>{
     console.log("Server is running on port 3000");
