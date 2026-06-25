@@ -1,0 +1,25 @@
+{
+  "name": "whatsupptechies",
+  "version": "1.0.0",
+  "description": "A Self build Backend to connect techies from differend areas",
+  "homepage": "https://github.com/deepanjay2001/WhatsUppTechies#readme",
+  "bugs": {
+    "url": "https://github.com/deepanjay2001/WhatsUppTechies/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepanjay2001/WhatsUppTechies.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start":"node SRC/app.js",
+    "dev": "nodemon SRC/app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
