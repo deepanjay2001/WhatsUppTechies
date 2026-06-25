@@ -80,6 +80,23 @@ app.patch("/hello",(req,res)=>{
 // });// /products?category=electronics&price=1000 -> {category: "electronics", price: "1000"}
 
 
+//Middleware
+
+const {adminAuth} = require("./middlewares/auth");
+app.use("/users",adminAuth);
+
+app.get("/users",(req,res,next)=>{
+    console.log("users get api");
+    //res.send({"message":"users get api"});
+    next();
+})
+app.get("/users/getdata",(req,res,next)=>{
+    console.log("users post api");
+    res.send({"message":"users post api"});
+    //next();
+})
+
+
 app.listen(3000,()=>{
     console.log("Server is running on port 3000");
 });
